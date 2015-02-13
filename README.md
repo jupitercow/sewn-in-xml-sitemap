@@ -1,6 +1,11 @@
 # Sewn In XML Sitemap
 
-A nice and simple way to create XML Sitemaps when a page or post is saved. Very simple, no cruft or extra features you won't use. It also works well with our Sewn In Simple SEO plugin. When both are installed, they integrate together.
+Simple way to automatically generate XML Sitemaps when a page or post is saved. Very simple, no cruft or extra features you won't use. There are two main customizations available.
+
+*	Choose which post types are added (posts and pages by default)
+*	Adds a meta box to all included post types to remove single posts from being added to the sitemap
+
+It also works well with our [Sewn In Simple SEO](https://github.com/jupitercow/sewn-in-simple-seo) plugin. When both are installed, they integrate together.
 
 ## Control what post types are added
 
@@ -55,6 +60,6 @@ This checkbox also removes posts from wp_list_pages, you can turn that off using
 add_filter( 'sewn/sitemap/wp_list_pages', '__return_false' );
 ```
 
-## Customize WordPress SEO plugin
+## Compatibility
 
-Works with the our Sewn In Simple SEO plugin. When installed, the XML sitemap checkbox integrates with the SEO fields and this plugin will use the SEO post types. The goal is to keep things very simple and integrated.
+Works with the our [Sewn In Simple SEO](https://github.com/jupitercow/sewn-in-simple-seo) plugin. When installed, the XML sitemap checkbox integrates with the SEO fields and this plugin will use the SEO post types. The goal is to keep things very simple and integrated.
