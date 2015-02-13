@@ -154,7 +154,7 @@ class Sewn_Xml_Sitemap
 	 */
 	public function post_types()
 	{
-		return apply_filters( "{$this->prefix}/seo/post_types", apply_filters( 'sewn_seo/post_types', $this->settings['post_types'] ) );
+		return apply_filters( "{$this->prefix}/sitemap/post_types", apply_filters( "{$this->prefix}/seo/post_types", apply_filters( 'sewn_seo/post_types', $this->settings['post_types'] ) ) );
 	}
 
 	/**
