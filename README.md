@@ -60,6 +60,25 @@ This checkbox also removes posts from wp_list_pages, you can turn that off using
 add_filter( 'sewn/sitemap/wp_list_pages', '__return_false' );
 ```
 
+```php
+/**
+ * This filter arrived in 2.0.3
+ *
+ * Remove specific posts programatically. This could go into functions.php or a plugin.
+ *
+ * This example removes all posts that have post meta field of "test" set.
+ */
+add_filter( 'sewn/sitemap/post', 'custom_remove_test_posts', 10, 2 );
+function custom_remove_test_posts( $value, $post )
+{
+	$status = get_metadata( 'post', $post->ID, 'test', true );
+	if ( $status ) {
+		$value = false;
+	}
+	return $value;
+}
+```
+
 ## Compatibility
 
 Works with the our [Sewn In Simple SEO](https://github.com/jupitercow/sewn-in-simple-seo) plugin. When installed, the XML sitemap checkbox integrates with the SEO fields and this plugin will use the SEO post types. The goal is to keep things very simple and integrated.
