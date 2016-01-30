@@ -19,7 +19,7 @@ Simple way to automatically generate XML Sitemaps when a page or post is saved. 
 *	Choose which post types are added (posts and pages by default)
 *	Adds a meta box to all included post types to remove single posts from being added to the sitemap
 
-It also works well with our [Sewn In Simple SEO](https://github.com/jupitercow/sewn-in-simple-seo) plugin. When both are installed, they integrate together.
+It also works well with our [Sewn In Simple SEO](https://wordpress.org/plugins/sewn-in-simple-seo/) plugin. When both are installed, they integrate together.
 
 = Control what post types are added =
 
