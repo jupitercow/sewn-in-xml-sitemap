@@ -79,6 +79,24 @@ function custom_remove_test_posts( $value, $post )
 }
 ```
 
+## Change frequency for a post type, could also be used an a single post basis by checking the the $post-ID or $post->post_name
+
+```php
+/**
+ * Change sitemap frequency in XML, default is "monthly"
+ *
+ * options: always, hourly, daily, weekly, monthly, yearly, never
+ */
+add_filter( 'sewn/sitemap/frequency', 'custom_sitemap_frequency', 10, 2 );
+function custom_sitemap_frequency( $frequency, $post )
+{
+	if ( 'news' == get_post_type($post) ) {
+		$frequency = 'daily';
+	}
+	return $frequency;
+}
+```
+
 ## Compatibility
 
 Works with the our [Sewn In Simple SEO](https://github.com/jupitercow/sewn-in-simple-seo) plugin. When installed, the XML sitemap checkbox integrates with the SEO fields and this plugin will use the SEO post types. The goal is to keep things very simple and integrated.

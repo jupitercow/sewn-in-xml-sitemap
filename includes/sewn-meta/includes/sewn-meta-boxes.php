@@ -219,7 +219,7 @@ class Sewn_Meta_Box
 			foreach ( $_POST["{$this->prefix}_nonce"] as $group_id => $nonce_value )
 			{
 				// Exits script if nonce is not valid
-				$is_valid_nonce = ( wp_verify_nonce($nonce_value, $this->settings['nonce']['action'] . "_{$k}") ) ? 'true' : 'false';
+				$is_valid_nonce = ( wp_verify_nonce($nonce_value, $this->settings['nonce']['action'] . "_{$group_id}") ) ? 'true' : 'false';
 				if ( ! $is_valid_nonce ) { return; }
 
 				// Make sure the box is registered

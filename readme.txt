@@ -3,8 +3,8 @@ Contributors: jcow, ekaj
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jacobsnyder%40gmail%2ecom&lc=US&item_name=Jacob%20Snyder&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
 Tags: xml sitemap,sitemap,seo
 Requires at least: 3.6.1
-Tested up to: 4.4
-Stable tag: 2.0.3
+Tested up to: 4.4.1
+Stable tag: 2.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Simple way to automatically generate XML Sitemaps when a page or post is saved. 
 
 == Description ==
 
-= 2.0.3 changed default post types used from only 'post' and 'page' to ALL public post types except "attachment". This is a cleaner approach, but may require customization. Ther is more info on customization below. =
+= 2.0.3 changed default post types used from only 'post' and 'page' to ALL public post types except "attachment". This is a cleaner approach, but may require customization. There is more info on customization below. =
 
 Simple way to automatically generate XML Sitemaps when a page or post is saved. Very simple, no cruft or extra features you won't use. There are two main customizations available.
 
@@ -93,6 +93,24 @@ function custom_remove_test_posts( $value, $post )
 }
 `
 
+= Change frequency for a post type, could also be used an a single post basis by checking the the $post-ID or $post->post_name =
+
+`
+/**
+ * Change sitemap frequency in XML, default is "monthly"
+ *
+ * options: always, hourly, daily, weekly, monthly, yearly, never
+ */
+add_filter( 'sewn/sitemap/frequency', 'custom_sitemap_frequency', 10, 2 );
+function custom_sitemap_frequency( $frequency, $post )
+{
+	if ( 'news' == get_post_type($post) ) {
+		$frequency = 'daily';
+	}
+	return $frequency;
+}
+`
+
 = Compatibility =
 
 Works with the [Sewn In Simple SEO](https://github.com/jupitercow/sewn-in-simple-seo) plugin. When installed, the XML sitemap checkbox integrates with the SEO fields and this plugin will use the SEO post types. The goal is to keep things very simple and integrated.
@@ -112,6 +130,10 @@ Works with the [Sewn In Simple SEO](https://github.com/jupitercow/sewn-in-simple
 1. The checkbox to remove posts in the backend.
 
 == Changelog ==
+
+= 2.0.4 - 2016-01-29 =
+
+*   Fixed bug in meta boxes. Updated readme.
 
 = 2.0.3 - 2015-07-27 =
 
