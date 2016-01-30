@@ -113,7 +113,7 @@ function custom_sitemap_frequency( $frequency, $post )
 
 = Compatibility =
 
-Works with the [Sewn In Simple SEO](https://github.com/jupitercow/sewn-in-simple-seo) plugin. When installed, the XML sitemap checkbox integrates with the SEO fields and this plugin will use the SEO post types. The goal is to keep things very simple and integrated.
+Works with the [Sewn In Simple SEO](https://wordpress.org/plugins/sewn-in-simple-seo/) plugin. When installed, the XML sitemap checkbox integrates with the SEO fields and this plugin will use the SEO post types. The goal is to keep things very simple and integrated.
 
 
 == Installation ==
