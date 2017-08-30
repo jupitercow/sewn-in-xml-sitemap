@@ -9,27 +9,6 @@ It also works well with our [Sewn In Simple SEO](https://github.com/jupitercow/s
 
 ## Control what post types are added
 
-By default only pages and posts are added, but you can remove either of those and/or add more using this filter:
-
-```php
-/**
- * Add a post type to the XML sitemap
- *
- * Takes the default array('post','page') and adds 'news' and 'event' post types 
- * to it. Returns: array('post','page','news','event')
- *
- * @param	array	$post_types	List of post types to be added to the XML Sitemap
- * @return	array	$post_types	Modified list of post types
- */
-add_filter( 'sewn/seo/post_types', 'custom_seo_post_types' );
-function custom_seo_post_types( $post_types )
-{
-	$post_types[] = 'news';
-	$post_types[] = 'event';
-	return $post_types;
-}
-```
-
 ```php
 /**
  * Completely replace the post types in the XML sitemap
@@ -69,8 +48,7 @@ add_filter( 'sewn/sitemap/wp_list_pages', '__return_false' );
  * This example removes all posts that have post meta field of "test" set.
  */
 add_filter( 'sewn/sitemap/post', 'custom_remove_test_posts', 10, 2 );
-function custom_remove_test_posts( $value, $post )
-{
+function custom_remove_test_posts( $value, $post ) {
 	$status = get_metadata( 'post', $post->ID, 'test', true );
 	if ( $status ) {
 		$value = false;
@@ -88,8 +66,7 @@ function custom_remove_test_posts( $value, $post )
  * options: always, hourly, daily, weekly, monthly, yearly, never
  */
 add_filter( 'sewn/sitemap/frequency', 'custom_sitemap_frequency', 10, 2 );
-function custom_sitemap_frequency( $frequency, $post )
-{
+function custom_sitemap_frequency( $frequency, $post ) {
 	if ( 'news' == get_post_type($post) ) {
 		$frequency = 'daily';
 	}

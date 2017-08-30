@@ -3,8 +3,8 @@ Contributors: jcow, ekaj
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jacobsnyder%40gmail%2ecom&lc=US&item_name=Jacob%20Snyder&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
 Tags: xml sitemap,sitemap,seo
 Requires at least: 3.6.1
-Tested up to: 4.4.1
-Stable tag: 2.0.4
+Tested up to: 4.8.1
+Stable tag: 2.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,6 +14,8 @@ Simple way to automatically generate XML Sitemaps when a page or post is saved. 
 
 = 2.0.3 changed default post types used from only 'post' and 'page' to ALL public post types except "attachment". This is a cleaner approach, but may require customization. There is more info on customization below. =
 
+This site doesn't notify of new support threads, so send a [contact](http://jcow.com/) through our form to notify of a new thread for a quicker response.
+
 Simple way to automatically generate XML Sitemaps when a page or post is saved. Very simple, no cruft or extra features you won't use. There are two main customizations available.
 
 *	Choose which post types are added (posts and pages by default)
@@ -22,27 +24,6 @@ Simple way to automatically generate XML Sitemaps when a page or post is saved. 
 It also works well with our [Sewn In Simple SEO](https://wordpress.org/plugins/sewn-in-simple-seo/) plugin. When both are installed, they integrate together.
 
 = Control what post types are added =
-
-By default only pages and posts are added, but you can remove either of those and/or add more using this filter:
-
-`
-/**
- * Add a post type to the XML sitemap
- *
- * Takes the default array('post','page') and adds 'news' and 'event' post types 
- * to it. Returns: array('post','page','news','event')
- *
- * @param	array	$post_types	List of post types to be added to the XML Sitemap
- * @return	array	$post_types	Modified list of post types
- */
-add_filter( 'sewn/seo/post_types', 'custom_seo_post_types' );
-function custom_seo_post_types( $post_types )
-{
-	$post_types[] = 'news';
-	$post_types[] = 'event';
-	return $post_types;
-}
-`
 
 `
 /**
@@ -127,7 +108,9 @@ Works with the [Sewn In Simple SEO](https://wordpress.org/plugins/sewn-in-simple
 
 == Screenshots ==
 
-1. The checkbox to remove posts in the backend.
+1. The XML Sitemap panel with checkbox to remove posts in the backend.
+1. The [Sewn In Simple SEO](https://wordpress.org/plugins/sewn-in-simple-seo/) panel with XML Sitemap & [Sewn In Simple Social Optimization](https://wordpress.org/plugins/sewn-in-simple-social/) installed.
+
 
 == Changelog ==
 
