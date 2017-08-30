@@ -114,6 +114,10 @@ Works with the [Sewn In Simple SEO](https://wordpress.org/plugins/sewn-in-simple
 
 == Changelog ==
 
+= 2.0.5 - 2017-08-30 =
+
+*   Updated meta boxes, images.
+
 = 2.0.4 - 2016-01-29 =
 
 *   Fixed bug in meta boxes. Updated readme.
