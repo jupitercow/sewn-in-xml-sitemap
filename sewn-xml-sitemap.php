@@ -9,7 +9,7 @@
  * Plugin Name:       Sewn In XML Sitemap
  * Plugin URI:        https://wordpress.org/plugins/sewn-in-xml-sitemap/
  * Description:       Simple system for building XML Sitemaps out of posts when saved. Very simple and efficient.
- * Version:           2.0.5
+ * Version:           2.0.6
  * Author:            Jupitercow
  * Author URI:        http://Jupitercow.com/
  * Contributor:       Jake Snyder
@@ -74,7 +74,7 @@ class Sewn_Xml_Sitemap
 	{
 		$this->prefix      = 'sewn';
 		$this->plugin_name = strtolower(__CLASS__);
-		$this->version     = '2.0.5';
+		$this->version     = '2.0.6';
 		$this->settings    = array(
 			'add_checkbox' => true,
 			'post_types'   => array(''),
