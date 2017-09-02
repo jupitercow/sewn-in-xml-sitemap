@@ -114,6 +114,10 @@ Works with the [Sewn In Simple SEO](https://wordpress.org/plugins/sewn-in-simple
 
 == Changelog ==
 
+= 2.0.6 - 2017-09-02 =
+
+*   Removed array short syntax, updated meta style.
+
 = 2.0.5 - 2017-08-30 =
 
 *   Updated meta boxes, images.
@@ -145,6 +149,9 @@ Works with the [Sewn In Simple SEO](https://wordpress.org/plugins/sewn-in-simple
 *   Added to the repo.
 
 == Upgrade Notice ==
+
+= 2.0.6 =
+Removed array short syntax, so that we can now support WordPress PHP requirements (5.2.4).
 
 = 2.0.0 =
 There are some basic compatibility issues with some of the filters and actions from 1.0.x.
